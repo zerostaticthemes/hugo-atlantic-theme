@@ -1,57 +1,25 @@
 {
   "htmlElements": {
     "tags": [
-      "a",
-      "article",
-      "blockquote",
       "body",
       "div",
       "h1",
-      "h2",
-      "h3",
       "head",
       "html",
-      "img",
-      "li",
       "link",
       "main",
       "meta",
-      "p",
-      "pre",
       "script",
-      "title",
-      "ul"
+      "title"
     ],
     "classes": [
-      "chroma",
-      "col-12",
-      "col-lg-4",
-      "col-md-6",
-      "highlight",
-      "justify-self-center",
-      "lg:prose-lg",
-      "mb-12",
-      "mb-16",
-      "mb-2",
-      "md:px-0",
-      "mx-auto",
+      "bg-brown-50",
       "page",
-      "prose",
-      "px-6",
+      "py-2",
       "py-6",
-      "sm:px-4",
-      "text-gray-700",
       "wrapper"
     ],
     "ids": [
-      "commonmark",
-      "example",
-      "github-flavored-markdown-gfm",
-      "heading",
-      "hello",
-      "history",
-      "markdown-extra",
-      "markdown-flavours",
       "wrapper"
     ]
   }
