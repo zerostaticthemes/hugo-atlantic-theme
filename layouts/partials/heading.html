@@ -1,0 +1,16 @@
+{{ $title := .title }}
+{{ $description := .description }}
+{{ $align := .align }}
+{{ $date := .date }}
+
+<div class="py-6 md:py-12 lg:w-10/12 {{ if eq $align "center" }}md:text-center mx-auto{{ end }}">
+  {{ if $date }}
+  <div class="font-medium text-gray-700">{{ $date }}</div>
+  {{ end }}
+  <h1 class="heading text-4xl md:text-6xl font-bold font-sans md:leading-tight">
+    {{ $title }}
+  </h1>
+  {{ if $description }}
+  <h2 class="text-xl text-gray-600 mt-2">{{ $description }}</h2>
+  {{ end }}
+</div>

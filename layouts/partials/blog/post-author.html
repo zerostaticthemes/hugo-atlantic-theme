@@ -1,0 +1,16 @@
+{{- range .Params.authors }}
+    {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+    <div class="post-author">
+        <div class="post-author-avatar">
+        <img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt=""/>
+        </div>
+        <div class="post-author-info">
+        <a class="post-author-name" href="{{ .Permalink }}">{{ .Params.name }}</a>
+        {{ $dateFormat := default "Jan 2, 2006" (index .Site.Params "date_format") }}
+        {{ if not .Date.IsZero }}
+            <span class="post-author-date">{{ .Date.Format $dateFormat }}</span>
+        {{ end }}
+        </div>
+    </div>
+    {{ end }}
+{{ end }}

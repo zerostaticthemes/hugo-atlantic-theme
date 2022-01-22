@@ -13,10 +13,16 @@
       "title"
     ],
     "classes": [
-      "bg-brown-50",
+      "font-bold",
+      "font-sans",
+      "heading",
+      "lg:w-10/12",
+      "md:leading-tight",
+      "md:py-12",
+      "md:text-6xl",
       "page",
-      "py-2",
       "py-6",
+      "text-4xl",
       "wrapper"
     ],
     "ids": [

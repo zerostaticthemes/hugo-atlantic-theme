@@ -1,14 +1,16 @@
 {{ define "main" }}
 
+{{ partial "heading.html" (dict "title" .Params.heading.title "description" .Params.heading.description "align" .Params.heading.align "date" .Params.heading.date)}}
+
 <main class="py-6">
   {{ $pages := where $.Site.RegularPages "Type" "posts" }}
   {{ $limit := .Site.Params.homepagePostLimit | default 3 }}
-
   {{ if gt (len $pages) 0 }}
   <div class="mb-12">
     {{ range first $limit $pages }}
+    {{ .Params }}
       <div class="col-12 col-md-6 col-lg-4 mb-2">
-        {{ .Render "summary" }}
+        {{ partial "blog/post-summary.html" . }}
       </div>
     {{ end }}
   </div>

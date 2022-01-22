@@ -7,7 +7,7 @@
     "example": "concurrently \"npm run watch:tw\" \"npm run watch:hugo-example\"",
     "watch:tw": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
     "watch:hugo": "hugo server",
-    "watch:hugo-example": "hugo server --config=exampleSite/config.toml --themesDir='../'",
+    "watch:hugo-example": "hugo server --source=exampleSite --themesDir='../../'",
     "build": "hugo --minify"
   },
   "author": "",

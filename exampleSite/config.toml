@@ -16,7 +16,8 @@ paginate = 6
   writeStats = true
 
 [permalinks]
-    post = "/:year/:month/:title/"
+    posts = "blog/:year/:month/:title/"
+    pages = ":slug/"
 
 [taxonomies]
     tag = "tags"

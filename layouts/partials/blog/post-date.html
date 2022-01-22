@@ -1,0 +1,7 @@
+{{ $dateFormat := default "Jan 2, 2006" (index .Site.Params "date_format") }}
+
+<div class="post-date">
+    {{ if not .Date.IsZero }}
+        <span class="post-date-date">{{ .Date.Format $dateFormat }}</span>
+    {{ end }}
+</div>
