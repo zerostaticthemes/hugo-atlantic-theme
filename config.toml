@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Hugo Paradigm"
-theme = "hugo-paradigm"
+title = "Hugo Atlantic"
+theme = "hugo-atlantic"
 enableGitInfo = false
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
@@ -9,72 +9,43 @@ pygmentsUseClasses = true
 metaDataFormat = "yaml"
 paginate = 6
 
+[params]
+  homepagePostLimit = 6
+  
+[build]
+  writeStats = true
+
 [permalinks]
     post = "/:year/:month/:title/"
 
 [taxonomies]
     tag = "tags"
     category = "categories"
-    work =  "works"
     author = "authors"
   
 # Main Menu
 [[menu.main]]
-	name = "Custom Pages"
-	url = "/custom-page-1"
-    weight = 1
-    identifier = 'dropdown'
-    [[menu.main]]
-        name = "Custom Page 1"
-        url = "/custom-page-1"
-        parent = "dropdown"
-        weight = 1
-    [[menu.main]]
-        name = "Custom Page 2"
-        url = "/custom-page-2"
-        parent = "dropdown"
-        weight = 2
-    [[menu.main]]
-        name = "Custom Page 3"
-        url = "/custom-page-3"
-        parent = "dropdown"
-        weight = 3
-
-[[menu.main]]
-    name = "Features"
-    url = "/features/"
-    weight = 3
-
-[[menu.main]]
     name = "Blog"
     url = "/posts/"
-    weight = 4
+    weight = 1
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
 
 # Footer Menu Primary
 [[menu.footer_primary]]
 	name = "Home"
 	url = "/"
-    weight = 1
+  weight = 1
+
 [[menu.footer_primary]]
     name = "Blog"
     url = "/posts/"
     weight = 2
+
 [[menu.footer_primary]]
     name = "Privacy Policy"
     url = "/privacy/"
-    weight = 3
-
-# Footer Menu Secondary
-[[menu.footer_secondary]]
-    name = "Custom Page 1"
-    url = "/custom-page-1/"
-    weight = 1
-
-[[menu.footer_secondary]]
-    name = "Custom Page 2"
-    url = "/custom-page-2/"
-    weight = 2
-[[menu.footer_secondary]]
-    name = "Custom Page 3"
-    url = "/custom-page-3/"
     weight = 3

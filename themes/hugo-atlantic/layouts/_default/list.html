@@ -1,0 +1,8 @@
+{{ define "main" }}
+{{ range .Pages }}
+    <article class="px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg">
+        <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+        {{ .Content }}
+    </article>
+{{ end }}
+{{ end }}

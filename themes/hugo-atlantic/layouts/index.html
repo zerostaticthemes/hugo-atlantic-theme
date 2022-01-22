@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+<main class="py-6">
+  {{ $pages := where $.Site.RegularPages "Type" "posts" }}
+  {{ $limit := .Site.Params.homepagePostLimit | default 3 }}
+
+  {{ if gt (len $pages) 0 }}
+  <div class="mb-12">
+    {{ range first $limit $pages }}
+      <div class="col-12 col-md-6 col-lg-4 mb-2">
+        {{ .Render "summary" }}
+      </div>
+    {{ end }}
+  </div>
+  {{ end }}
+  <h1>Test</h1>
+
+  {{ .Content }}
+
+</main>
+
+{{ end }}
