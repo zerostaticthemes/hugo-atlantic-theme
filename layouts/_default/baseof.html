@@ -34,15 +34,27 @@
     {{ end }}
 
 </head>
-
 <body class='page'>
     <div class="container mx-auto px-6 md:px-4">
-      {{ partial "header/header.html" (dict 
-        "context" .
-        "site" $.Site
-        )}}
+        {{ partial "header/header.html" . }}
         {{ block "main" . }}{{ end }}
+        {{ partial "footer/footer.html" . }}
     </div>
+
+    {{ $scripts := resources.Get "js/scripts.js" }}
+    {{ $hamburger := resources.Get "js/hamburger.js" }}
+
+    {{ $js := slice $scripts $hamburger | resources.Concat "js/bundle.js" }}
+
+    {{ if .Site.IsServer }}
+      <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+    {{ else }}
+      <script type="text/javascript" src="{{ ($js | minify | fingerprint).RelPermalink }}"></script>
+    {{ end }}
+
+    {{ block "footer_js" . }}{{ end }}
+
+    {{ partial "analytics/google-analytics.html" . }}
 </body>
 </html>
 

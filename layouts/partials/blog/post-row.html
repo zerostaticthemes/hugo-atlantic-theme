@@ -1,9 +1,10 @@
 {{ $title := .title }}
 {{ $description := .description }}
 {{ $thumbnail := .thumbnail }}
-{{ $url := .Permalink }}
-{{ $authors := .authors }}
+{{ $url := .url }}
+{{ $author := .author }}
 {{ $date := .date }}
+{{ $categories := .categories }}
 
 {{ $context := .context }}
 {{ $site := .site }}
@@ -12,17 +13,19 @@
 
   {{ if $thumbnail }}
     <div class="md:mr-4 mb-2 md:mb-0 md:w-4/12 ">
-      <a class="bg-gray-100" href="{{ $url.Permalink | relURL }}">
+      <a class="bg-gray-100" href="{{ $url | relURL }}">
         <img width="640" height="360" class="rounded mb-3 hover:opacity-70 transition duration-300 ease-in-out" alt="{{ $title }}" src="{{ $thumbnail | relURL }}"/></a>
     </div>
   {{ end }}
 
   <div class="flex-1">
     <div class="flex items-center">
-      {{ $dateFormat := default "Jan 2, 2006" (index .site.Params "date_format") }}
-      {{ if not .Date.IsZero }}
-          <div class="text-sm font-medium text-gray-700">{{ $date.Format $dateFormat }}</div>
+      {{ with $author }}
+      <div class="flex ml-4">
+         {{ partial "author/author.html" (dict  "context" . "site" $site "name" .name "image" .image "showName" .showName )}}
+      </div>
       {{ end }}
+      {{ partial "date/date.html" (dict  "context" . "site" $site "date" $date )}}
     </div>
 
     <a href="{{ $url | relURL }}" class="hover:text-green-400">
@@ -30,6 +33,14 @@
     </a>
 
     <p class="text-base font-light text-gray-600 mb-4">{{ $description }}</p>
+
+    {{ if $categories }}
+        <div class="mb-2">
+        {{ range $categories }}
+            {{ partial "categories/category.html" (dict "context" . )}}
+        {{ end }}
+      </div>
+    {{ end }}
 
   </div>
 </div>

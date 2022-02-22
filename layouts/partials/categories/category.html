@@ -1,0 +1,4 @@
+
+{{ $category := .context }}
+
+<a class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-green-200 text-green-800 hover:bg-blue-200 hover:text-blue-800 transition duration-300 ease-in-out" href="{{ "/categories/" | relLangURL }}{{ $category | urlize }}">{{ $category }}</a>

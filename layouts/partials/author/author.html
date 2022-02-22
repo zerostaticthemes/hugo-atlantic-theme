@@ -1,8 +1,12 @@
-{{- range .Params.authors }}
-    {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-        {{ if .Params.avatar }}
-            <img src="{{ .Params.avatar | relURL }}" alt="{{ .Params.name }}"/>
-        {{ end }}
-        <a class="mr-1" href="{{ .Permalink }}">{{ .Params.name }}</a>
-    {{ end }}
-{{ end }}
+{{ $name := .name }}
+{{ $showName := .showName }}
+{{ $image := .image }}
+
+<div class="flex items-center mr-2 -ml-4">
+  {{ if $image }}
+    <img width="28" height="28" class="rounded-full border-white border-2" src="{{ $image | relURL }}" alt="{{ $name }}"/>
+  {{ end }}
+  {{ if $showName }}
+    <span class="font-medium text-sm ml-1">{{ $name}}</span>
+  {{ end }}
+</div>

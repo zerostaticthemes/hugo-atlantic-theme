@@ -1,0 +1,16 @@
+
+
+{{ $site := $.Site }}
+
+<footer class="py-6 border-t-2">
+  <div class="container mx-auto">
+    <div class="flex mb-2">
+      {{ range $site.Data.social }}
+        <a class="py-2 mr-2" href="{{ .link }}"><img width="24" height="24" src="{{ .image }}" alt="{{ .name }}" /></a>
+      {{ end }}
+    </div>
+    <div class="text-sm text-gray-600">
+      <span>Free Hugo theme by</span>
+      <a class="text-green-500" href="https://www.zerostatic.io">Zerostatic Themes</a>
+    </div>
+</footer>
