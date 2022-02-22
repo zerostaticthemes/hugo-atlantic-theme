@@ -4,37 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ block "title" . }}{{ if .Params.meta_title }}{{ .Params.meta_title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}{{ end }}</title>
+    <title>{{ block "title" . }}{{ if .Params.meta_title }}{{ .Params.meta_title }}{{ else }}{{ .Title }} -
+        {{.Site.Title }}{{ end }}{{ end }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ .Site.BaseURL }}favicon-32x32.png">
-
-    {{ with .Site.Params.fonts }}
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="{{ .google_fonts }}" rel="stylesheet">
-    {{ end }}
-
-    {{ $styles := resources.Get "/css/style.css" | postCSS }}
-    {{ if .Site.IsServer }}
-      <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
-    {{ else }}
-      {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-      <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
-    {{ end }}
-    
-    {{ block "meta_tags" . }}
-        {{ if .Params.description }}<meta name="description" content="{{ .Params.description }}"/>{{ end }}
-        {{ if .Params.meta_title }}<meta property="og:title" content="{{ .Params.meta_title }}"/>{{ else }}<meta property="og:title" content="{{ .Title }}"/>{{ end }}
-        <meta property="og:type" content="website"/>
-        <meta property="og:url" content="{{ .Permalink }}"/>
-        {{ if .Params.image }}<meta property="og:image" content="{{ .Params.image | absURL }}"/>{{ end }}
-        {{ if .Params.description }}<meta property="og:description" content="{{ .Params.description }}"/>{{ end }}
-        <meta name="twitter:card" content="summary"/>
-        {{ if .Site.Params.seo.meta_twitter_site }}<meta name="twitter:site" content="{{ .Site.Params.seo.meta_twitter_site }}"/>{{ end }}
-        {{ if .Site.Params.seo.meta_twitter_creator }}<meta name="twitter:creator" content="{{ .Site.Params.seo.meta_twitter_creator }}"/>{{ end }}
-    {{ end }}
-
+    {{ partial "head/google-fonts.html" . }}
+    {{ partial "head/styles.html" . }}
+    {{ partial "head/meta.html" . }}
 </head>
+
 <body class='page'>
+    {{ partial "menu/menu-overlay.html" . }}
     <div class="container mx-auto px-6 md:px-4">
         {{ partial "header/header.html" . }}
         {{ block "main" . }}{{ end }}
@@ -47,14 +27,14 @@
     {{ $js := slice $scripts $hamburger | resources.Concat "js/bundle.js" }}
 
     {{ if .Site.IsServer }}
-      <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+    <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
     {{ else }}
-      <script type="text/javascript" src="{{ ($js | minify | fingerprint).RelPermalink }}"></script>
+    <script type="text/javascript" src="{{ ($js | minify | fingerprint).RelPermalink }}"></script>
     {{ end }}
 
     {{ block "footer_js" . }}{{ end }}
 
     {{ partial "analytics/google-analytics.html" . }}
 </body>
-</html>
 
+</html>

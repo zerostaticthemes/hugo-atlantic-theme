@@ -7,11 +7,13 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
 metaDataFormat = "yaml"
-paginate = 6
+paginate = 3
 
 [params]
+  google_analytics_id = ""
   [params.homepage]
     postLimit = 6
+    
   [params.logo]
     showLogoTextOnDesktop = true
     showLogoTextOnMobile = true
@@ -25,6 +27,12 @@ paginate = 6
     logoDesktopImageWidth = 32
     logoMobileImageHeight = 32
     logoMobileImageWidth = 32
+
+  [params.fonts]
+    google_fonts = "https://fonts.googleapis.com/css2?family=Fira+Mono&family=Lato:wght@300;400;700&family=Source+Sans+Pro&display=swap"
+    heading = "Lato"
+    base = "Source Sans Pro"
+    monospace = "Fira Mono"
   
 [build]
   writeStats = true
@@ -40,27 +48,16 @@ paginate = 6
   
 # Main Menu
 [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
     name = "Blog"
     url = "/posts/"
-    weight = 1
+    weight = 2
 
 [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 2
-
-# Footer Menu Primary
-[[menu.footer_primary]]
-	name = "Home"
-	url = "/"
-  weight = 1
-
-[[menu.footer_primary]]
-    name = "Blog"
-    url = "/posts/"
-    weight = 2
-
-[[menu.footer_primary]]
-    name = "Privacy Policy"
-    url = "/privacy/"
     weight = 3

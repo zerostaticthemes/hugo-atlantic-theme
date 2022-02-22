@@ -1,8 +1,28 @@
 {{ define "main" }}
-{{ range .Pages }}
-    <article class="px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg">
-        <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-        {{ .Content }}
-    </article>
-{{ end }}
+
+{{ partial "heading/heading.html" (dict "title" .Params.heading.title "description" .Params.heading.description "align"
+.Params.heading.align "date" .Params.heading.date)}}
+
+<main class="py-6">
+    {{ $paginator := .Paginate (where .Pages "Type" "posts") }}
+    {{ range $paginator.Pages }}
+    <div class="mb-12">
+        {{ partial "blog/post-row.html" (dict
+        "context" .
+        "site" $.Site
+        "title" .Params.title
+        "date" .Params.date
+        "description" .Params.description
+        "thumbnail" .Params.thumbnail
+        "author" .Params.author
+        "tags" .Params.tags
+        "categories" .Params.categories
+        "url" .Permalink
+        )}}
+    </div>
+    {{ end }}
+</main>
+
+{{ partial "paginator/paginator.html" . }}
+
 {{ end }}

@@ -3,7 +3,7 @@
 
 <header class="flex bg-white dark:bg-black items-center justify-between py-6">
   <div class="logo hidden md:block">
-    <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="{{ $site.Params.BaseURL }}">
+    <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="{{ $site.BaseURL }}">
       {{ if $site.Params.logo.showLogoImageOnDesktop }}
       <img class="mr-2" height="{{ $site.Params.logo.logoDesktopImageHeight }}" width="{{ $site.Params.logo.logoDesktopImageWidth }}"
         alt="{{ $site.Params.title }} Logo" src="{{ $site.Params.logo.logoDesktopImage | relURL }}" />
@@ -14,7 +14,7 @@
     </a>
   </div>
   <div class="logo-mobile block md:hidden">
-    <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="{{ $site.Params.BaseURL }}">
+    <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="{{ $site.BaseURL }}">
       {{ if $site.Params.logo.showLogoImageOnMobile }}
       <img height="{{ $site.Params.logo.logoMobileImageHeight }}" width="{{ $site.Params.logo.logoMobileImageWidth }}"
         alt="{{ $site.Params.title }} Logo" src="{{ $site.Params.logo.logoMobileImage | relURL }}" />

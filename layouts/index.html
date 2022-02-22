@@ -1,31 +1,32 @@
 {{ define "main" }}
 
-{{ partial "heading/heading.html" (dict "title" .Params.heading.title "description" .Params.heading.description "align" .Params.heading.align "date" .Params.heading.date)}}
+{{ partial "heading/heading.html" (dict "title" .Params.heading.title "description" .Params.heading.description
+"align" .Params.heading.align "date" .Params.heading.date)}}
 
 <main class="py-6">
-  {{ $pages := where $.Site.RegularPages "Type" "posts" }}
-  {{ $limit := .Site.Params.homepage.postLimit | default 3 }}
-  {{ if gt (len $pages) 0 }}
-  <div class="mb-12">
-    {{ range first $limit $pages }}
-      <div class="mb-12">
-        {{ partial "blog/post-row.html" (dict 
-        "context" .
-        "site" $.Site
-        "title" .Params.title
-        "date" .Params.date
-        "description" .Params.description 
-        "thumbnail" .Params.thumbnail
-        "author" .Params.author
-        "tags" .Params.tags
-        "categories" .Params.categories
-        "url" .Permalink
-        )}}
-      </div>
+    {{ $pages := where $.Site.RegularPages "Type" "posts" }}
+    {{ $limit := .Site.Params.homepage.postLimit | default 3 }}
+    {{ if gt (len $pages) 0 }}
+    <div class="mb-12">
+        {{ range first $limit $pages }}
+        <div class="mb-12">
+            {{ partial "blog/post-row.html" (dict
+            "context" .
+            "site" $.Site
+            "title" .Params.title
+            "date" .Params.date
+            "description" .Params.description
+            "thumbnail" .Params.thumbnail
+            "author" .Params.author
+            "tags" .Params.tags
+            "categories" .Params.categories
+            "url" .Permalink
+            )}}
+        </div>
+        {{ end }}
+    </div>
     {{ end }}
-  </div>
-  {{ end }}
-  {{ .Content }}
+    {{ .Content }}
 </main>
 
 {{ end }}

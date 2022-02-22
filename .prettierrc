@@ -1,0 +1,24 @@
+{
+    "printWidth": 180,
+    "singleQuote": false,
+    "trailingComma": "none",
+    "tabWidth": 4,
+    "bracketSpacing": false,
+    "proseWrap": "preserve",
+    "jsxBracketSameLine": false,
+    "overrides": [
+        {
+            "files": ["*.md", "*.yaml"],
+            "options": {
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": ["*.html"],
+            "options": {
+                "parser": "go-template",
+                "printWidth": 320
+            }
+        }
+    ]
+}
