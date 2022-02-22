@@ -10,7 +10,21 @@ metaDataFormat = "yaml"
 paginate = 6
 
 [params]
-  homepagePostLimit = 6
+  [params.homepage]
+    postLimit = 6
+  [params.logo]
+    showLogoTextOnDesktop = true
+    showLogoTextOnMobile = true
+    showLogoImageOnDesktop = true
+    showLogoImageOnMobile = true
+    logoDesktopText = "Hugo Atlantic"
+    logoDesktopImage = "images/logo/logo.svg"
+    logoMobileText = ""
+    logoMobileImage = "images/logo/logo-mobile.svg"
+    logoDesktopImageHeight = 32
+    logoDesktopImageWidth = 32
+    logoMobileImageHeight = 32
+    logoMobileImageWidth = 32
   
 [build]
   writeStats = true

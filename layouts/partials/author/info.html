@@ -1,0 +1,40 @@
+{{ $classes := slice "" }}
+{{ $styles := slice "" }}
+
+{{ if .align }}
+    {{ if eq .align "left" }}{{ $classes = $classes | append "info-left" }}{{ end }}
+    {{ if eq .align "center" }}{{ $classes = $classes | append "info-center" }}{{ end }}
+    {{ if eq .align "right" }}{{ $classes = $classes | append "info-right" }}{{ end }}
+{{ end }}
+
+<div class="info">
+    <div class="info-columns{{ delimit $classes " " }}" style="{{ delimit $styles " "  | safeCSS}}">
+        <div class="info-content">
+            {{ if .heading }}
+                <h2>{{ .heading }}</h2>
+            {{ end }}
+            {{ if .description }}
+                <p>{{ .description }}</p>
+            {{ end }}
+
+            {{ if .bullets }}
+                <ul>
+                {{ range .bullets }}
+                    <li>{{ . }}</li>
+                {{ end }}
+                </ul>
+            {{ end }}
+            
+            {{ if .button }}
+            <div class="info-buttons">
+                {{ partial "components/button.html" .button }}
+            </div>
+            {{ end }}
+        </div>
+        <div class="info-media">
+            {{ if .image }}
+            <img width="600" height="400" {{ if .heading }}alt="{{ .heading }}"{{ end }} class="img-fluid" src="{{ .image | relURL }}" />
+            {{ end }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<ul>
+    {{ range (.GetTerms "categories") }}
+        <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+    {{ end }}
+</ul>

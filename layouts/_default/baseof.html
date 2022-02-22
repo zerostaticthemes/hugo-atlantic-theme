@@ -36,8 +36,13 @@
 </head>
 
 <body class='page'>
-    <div id="wrapper" class="wrapper">
+    <div class="container mx-auto px-6 md:px-4">
+      {{ partial "header/header.html" (dict 
+        "context" .
+        "site" $.Site
+        )}}
         {{ block "main" . }}{{ end }}
     </div>
 </body>
 </html>
+

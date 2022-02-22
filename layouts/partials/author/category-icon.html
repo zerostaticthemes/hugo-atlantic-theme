@@ -1,0 +1,11 @@
+{{- range .Params.categories }}
+    {{- with $.Site.GetPage "taxonomyTerm" (printf "categories/%s" (urlize .)) }}
+        <div class="category-icon">
+            {{ if .Params.font_icon }}
+                <i class="{{ .Params.font_icon }}"></i>
+            {{ else if .Params.icon }}
+                <img src="{{ .Params.icon }}" alt="{{ .Title }}"/>
+            {{ end }}
+        </div>
+    {{ end }}
+{{ end }}

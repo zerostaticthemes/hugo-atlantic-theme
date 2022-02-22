@@ -1,0 +1,13 @@
+{{ $section := .Section}}
+{{ $pages := where .Site.RegularPages "Section" $section}}
+{{ $url := .URL }}
+{{if gt (len $pages) 0}}
+    <div class="sidebar">
+        <h2>{{ humanize .Section }}</h2>
+        <ul>
+            {{ range first 6 (sort $pages ".Params.weight") }}
+                <li><a {{ if eq $url .URL }}class="active"{{ end }} href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+{{end}}

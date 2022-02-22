@@ -8,9 +8,17 @@
   {{ if gt (len $pages) 0 }}
   <div class="mb-12">
     {{ range first $limit $pages }}
-    {{ .Params }}
       <div class="col-12 col-md-6 col-lg-4 mb-2">
-        {{ partial "blog/post-summary.html" . }}
+        {{ partial "blog/post-row.html" (dict 
+        "context" .
+        "site" $.Site
+        "title" .Params.title
+        "description" .Params.description 
+        "thumbnail" .Params.thumbnail
+        "authors" .Params.authors
+        "tags" .Params.tags
+        "categories" .Params.categories
+        )}}
       </div>
     {{ end }}
   </div>

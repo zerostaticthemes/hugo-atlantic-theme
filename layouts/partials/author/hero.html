@@ -1,0 +1,29 @@
+{{ $theme := .theme | default "primary" }}
+{{ $blend_mode := .blend_mode | default "normal" }}
+
+<div class="hero theme-{{ $theme }}" style="
+background-image: url('{{ .background | relURL }}'), 
+linear-gradient(to right, var(--color-{{ $theme }}), var(--color-{{ $theme }}-offset)); 
+background-blend-mode: {{ $blend_mode }};">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <div class="hero-text">
+                    {{ if .title }}
+                        <h1>{{ .title }}</h1>
+                    {{ end }}
+                    {{ if .description }}
+                        <p>{{ .description }}</p>
+                    {{ end }}
+                </div>
+            </div>
+            {{ if .image }}
+                <div class="col-12 col-md-6">
+                    <div class="hero-image">
+                        <img src="{{ .image | relURL }}"/>
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</div>

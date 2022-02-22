@@ -1,0 +1,35 @@
+{{ $title := .title }}
+{{ $description := .description }}
+{{ $thumbnail := .thumbnail }}
+{{ $url := .Permalink }}
+{{ $authors := .authors }}
+{{ $date := .date }}
+
+{{ $context := .context }}
+{{ $site := .site }}
+
+<div class="flex flex-col md:flex-row w-full lg:w-10/12">
+
+  {{ if $thumbnail }}
+    <div class="md:mr-4 mb-2 md:mb-0 md:w-4/12 ">
+      <a class="bg-gray-100" href="{{ $url.Permalink | relURL }}">
+        <img width="640" height="360" class="rounded mb-3 hover:opacity-70 transition duration-300 ease-in-out" alt="{{ $title }}" src="{{ $thumbnail | relURL }}"/></a>
+    </div>
+  {{ end }}
+
+  <div class="flex-1">
+    <div class="flex items-center">
+      {{ $dateFormat := default "Jan 2, 2006" (index .site.Params "date_format") }}
+      {{ if not .Date.IsZero }}
+          <div class="text-sm font-medium text-gray-700">{{ $date.Format $dateFormat }}</div>
+      {{ end }}
+    </div>
+
+    <a href="{{ $url | relURL }}" class="hover:text-green-400">
+      <h2 class="text-2xl font-semibold mb-1">{{ $title }}</h2>
+    </a>
+
+    <p class="text-base font-light text-gray-600 mb-4">{{ $description }}</p>
+
+  </div>
+</div>

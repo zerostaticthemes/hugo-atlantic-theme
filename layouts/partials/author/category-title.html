@@ -1,0 +1,7 @@
+{{- range .Params.categories }}
+    {{- with $.Site.GetPage "taxonomyTerm" (printf "categories/%s" (urlize .)) }}
+        <div class="category-title">
+            {{ .Title }}
+        </div>
+    {{ end }}
+{{ end }}
