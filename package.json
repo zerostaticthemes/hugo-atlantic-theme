@@ -1,25 +1,26 @@
 {
-  "name": "hugo-atlantic-theme",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "start": "concurrently npm:watch:*",
-    "watch:tw": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
-    "watch:hugo": "hugo server",
-    "example": "concurrently \"npm run watch:tw\" \"npm run watch:hugo-example\"",
-    "watch:hugo-example": "hugo server --source=exampleSite --themesDir='../../'",
-    "build": "hugo --minify"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.0",
-    "autoprefixer": "^10.4.2",
-    "concurrently": "^7.0.0",
-    "postcss": "^8.4.5",
-    "postcss-cli": "^9.1.0",
-    "prettier": "^2.5.1",
-    "prettier-plugin-go-template": "0.0.11",
-    "tailwindcss": "^3.0.15"
-  }
+    "name": "hugo-atlantic-theme",
+    "version": "1.0.0",
+    "description": "A Hugo Tailwind starter blog",
+    "author": "rob@zerostatic.io",
+    "license": "MIT",
+    "scripts": {
+        "start": "concurrently \"npm run watch:tailwind\" \"npm run watch:hugo\"",
+        "start:example": "concurrently \"npm run watch:tailwind\" \"npm run watch:hugo-example-site\"",
+        "build": "hugo --minify",
+        "build:example": "cd exampleSite && hugo --gc --themesDir ../..",
+        "watch:tailwind": "tailwindcss -i ./assets/css/style.css -o ./assets/css/dist/style.css --watch",
+        "watch:hugo": "hugo server",
+        "watch:hugo-example-site": "hugo server --source=exampleSite --themesDir='../../'"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.0",
+        "autoprefixer": "^10.4.2",
+        "concurrently": "^7.0.0",
+        "postcss": "^8.4.5",
+        "postcss-cli": "^9.1.0",
+        "prettier": "^2.5.1",
+        "prettier-plugin-go-template": "0.0.11",
+        "tailwindcss": "^3.0.15"
+    }
 }

@@ -8,8 +8,6 @@
     {{ range $paginator.Pages }}
     <div class="mb-12">
         {{ partial "blog/post-row.html" (dict
-        "context" .
-        "site" $.Site
         "title" .Params.title
         "date" .Params.date
         "description" .Params.description

@@ -1,8 +1,10 @@
 ---
 title: "Hosting Your Static Site"
 date: 2018-12-29T10:24:47+10:00
-layout: post
-authors: ["Sage Kirk", "Mike Young"]
+author: 
+  name: "Sage Kirk"
+  image: images/author/sage-kirk.jpg
+  twitter: '@zerostaticio'
 categories: ["Hosting", "Development"]
 description: "Hosting your website as a static site will improve performance and improve security."
 thumbnail: "https://source.unsplash.com/y3PdLg_zSDs/640x360"

@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Writing With Markdown"
 date: 2018-12-29
 author: 
   name: "Sage Kirk"
   image: images/author/sage-kirk.jpg
-  showName: false
+  twitter: '@zerostaticio'
 categories: ["Development", "Javascript", "Web Design"]
 tags: ["Writing"]
 description: Learn how to use Markdown to write blog posts. Understand front-matter and how it is used in templates.

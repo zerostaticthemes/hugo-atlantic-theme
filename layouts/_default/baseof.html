@@ -9,8 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ .Site.BaseURL }}favicon-32x32.png">
     {{ partial "head/google-fonts.html" . }}
-    {{ partial "head/styles.html" . }}
     {{ partial "head/meta.html" . }}
+
+    {{ $styles := resources.Get "/css/dist/style.css" | postCSS }}
+    {{ if .Site.IsServer }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+    {{ else }}
+    {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
+    {{ end }}
 </head>
 
 <body class='page'>

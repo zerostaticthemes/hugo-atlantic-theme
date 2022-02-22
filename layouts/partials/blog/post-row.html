@@ -6,9 +6,6 @@
 {{ $date := .date }}
 {{ $categories := .categories }}
 
-{{ $context := .context }}
-{{ $site := .site }}
-
 <div class="flex flex-col md:flex-row w-full lg:w-10/12">
 
   {{ if $thumbnail }}
@@ -22,10 +19,10 @@
     <div class="flex items-center">
       {{ with $author }}
       <div class="flex ml-4">
-         {{ partial "author/author.html" (dict  "context" . "site" $site "name" .name "image" .image "showName" .showName )}}
+         {{ partial "author/author.html" (dict  "name" .name "image" .image "showName" .showName )}}
       </div>
       {{ end }}
-      {{ partial "date/date.html" (dict  "context" . "site" $site "date" $date )}}
+      {{ partial "date/date.html" (dict  "date" $date )}}
     </div>
 
     <a href="{{ $url | relURL }}" class="hover:text-green-400">
@@ -37,7 +34,7 @@
     {{ if $categories }}
         <div class="mb-2">
         {{ range $categories }}
-            {{ partial "categories/category.html" (dict "context" . )}}
+            {{ partial "categories/category.html" . }}
         {{ end }}
       </div>
     {{ end }}
