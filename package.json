@@ -9,7 +9,8 @@
         "build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --minify",
         "watch:tailwind": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
         "watch:hugo": "hugo server",
-        "example": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo server --source=exampleSite --themesDir ../.."
+        "example": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo server --source=exampleSite --themesDir ../..",
+        "example-build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --source=exampleSite --themesDir ../.."
     },
     "dependencies": {
         "@tailwindcss/typography": "^0.5.0",
