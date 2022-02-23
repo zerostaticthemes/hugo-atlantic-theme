@@ -87,14 +87,6 @@ npm run start
 
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
-## Deployment
-
-### Netlify
-
-Use Netlify to deploy this theme. This theme contains a valid and tested `netlify.toml` - Feel free to use the 1-click deploy below.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/zerostaticthemes/hugo-atlantic-theme)
-
 ## License & Credits
 
 This theme is open source under the MIT license.

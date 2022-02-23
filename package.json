@@ -7,8 +7,9 @@
     "scripts": {
         "start": "concurrently \"npm run watch:tailwind\" \"npm run watch:hugo\"",
         "start:example": "concurrently \"npm run watch:tailwind\" \"npm run watch:hugo-example-site\"",
-        "build": "hugo --minify",
-        "build:example": "cd exampleSite && hugo --gc --themesDir ../..",
+        "build": "tailwind && hugo --minify",
+        "build:example": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --source=exampleSite --themesDir ../..",
+        "tailwind": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css",
         "watch:tailwind": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
         "watch:hugo": "hugo server",
         "watch:hugo-example-site": "hugo server --source=exampleSite --themesDir='../../'"
