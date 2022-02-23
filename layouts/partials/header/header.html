@@ -1,35 +1,32 @@
-
-{{ $site := $.Site }}
-
 <header class="flex bg-white dark:bg-black items-center justify-between py-6">
-  <div class="logo hidden md:block">
-    <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="{{ $site.BaseURL }}">
-      {{ if $site.Params.logo.showLogoImageOnDesktop }}
-      <img class="mr-2" height="{{ $site.Params.logo.logoDesktopImageHeight }}" width="{{ $site.Params.logo.logoDesktopImageWidth }}"
-        alt="{{ $site.Params.title }} Logo" src="{{ $site.Params.logo.logoDesktopImage | relURL }}" />
-      {{ end }} 
-      {{ if $site.Params.logo.showLogoTextOnDesktop }}
-      <h2 class="text-2xl font-sans font-semibold">{{ $site.Params.logo.logoDesktopText }}</h2>
+  <div class="hidden md:block">
+    <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="{{ site.BaseURL }}">
+      {{ if site.Params.logo.showLogoImageOnDesktop }}
+      <img class="mr-2" height="{{ site.Params.logo.logoDesktopImageHeight }}"
+        width="{{ site.Params.logo.logoDesktopImageWidth }}" alt="{{ site.Params.title }} Logo"
+        src="{{ site.Params.logo.logoDesktopImage | relURL }}" />
+      {{ end }}
+      {{ if site.Params.logo.showLogoTextOnDesktop }}
+      <h2 class="text-2xl font-sans font-semibold">{{ site.Params.logo.logoDesktopText }}</h2>
       {{ end }}
     </a>
   </div>
-  <div class="logo-mobile block md:hidden">
-    <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="{{ $site.BaseURL }}">
-      {{ if $site.Params.logo.showLogoImageOnMobile }}
-      <img height="{{ $site.Params.logo.logoMobileImageHeight }}" width="{{ $site.Params.logo.logoMobileImageWidth }}"
-        alt="{{ $site.Params.title }} Logo" src="{{ $site.Params.logo.logoMobileImage | relURL }}" />
+  <div class="block md:hidden">
+    <a class="flex items-center hover:opacity-70 transition duration-300 ease-in-out" href="{{ site.BaseURL }}">
+      {{ if site.Params.logo.showLogoImageOnMobile }}
+      <img height="{{ site.Params.logo.logoMobileImageHeight }}" width="{{ site.Params.logo.logoMobileImageWidth }}"
+        alt="{{ site.Params.title }} Logo" src="{{ site.Params.logo.logoMobileImage | relURL }}" />
       {{ end }}
-      {{ if $site.Params.logo.showLogoTextOnMobile }}
-      <h2 class="text-2xl font-sans font-semibold">{{ $site.Params.logo.logoMobileText }}</h2>
+      {{ if site.Params.logo.showLogoTextOnMobile }}
+      <h2 class="text-2xl font-sans font-semibold">{{ site.Params.logo.logoMobileText }}</h2>
       {{ end }}
     </a>
   </div>
-  <div class="" id="menu-trigger">
-    <svg aria-hidden="true" class="text-black" data-icon="bars" data-prefix="fas" focusable="false" height="24"
-      role="img" viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
-        fill="currentColor"></path>
+  <button class="hover:opacity-70 transition duration-300 ease-in-out text-black" id="menu-trigger">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">
+      <path fill="currentColor"
+        d="M 5.5 9 A 1.50015 1.50015 0 1 0 5.5 12 L 42.5 12 A 1.50015 1.50015 0 1 0 42.5 9 L 5.5 9 z M 5.5 22.5 A 1.50015 1.50015 0 1 0 5.5 25.5 L 42.5 25.5 A 1.50015 1.50015 0 1 0 42.5 22.5 L 5.5 22.5 z M 5.5 36 A 1.50015 1.50015 0 1 0 5.5 39 L 42.5 39 A 1.50015 1.50015 0 1 0 42.5 36 L 5.5 36 z">
+      </path>
     </svg>
-  </div>
+  </button>
 </header>

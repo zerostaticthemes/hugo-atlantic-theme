@@ -9,7 +9,7 @@
         "start:example": "concurrently \"npm run watch:tailwind\" \"npm run watch:hugo-example-site\"",
         "build": "hugo --minify",
         "build:example": "cd exampleSite && hugo --gc --themesDir ../..",
-        "watch:tailwind": "tailwindcss -i ./assets/css/style.css -o ./assets/css/dist/style.css --watch",
+        "watch:tailwind": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
         "watch:hugo": "hugo server",
         "watch:hugo-example-site": "hugo server --source=exampleSite --themesDir='../../'"
     },
@@ -19,6 +19,8 @@
         "concurrently": "^7.0.0",
         "postcss": "^8.4.5",
         "postcss-cli": "^9.1.0",
+        "postcss-import": "^14.0.2",
+        "postcss-nested": "^5.0.6",
         "prettier": "^2.5.1",
         "prettier-plugin-go-template": "0.0.11",
         "tailwindcss": "^3.0.15"

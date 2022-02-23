@@ -1,17 +1,19 @@
 <div id="menu-container"
-  class=" bg-blue-600 h-screen w-screen fixed z-50 p-8 flex-col items-center justify-around bg-gradient-to-b from-green-400 to-blue-500 opacity-90 overflow-hidden hidden">
-  <div id="menu-close" class="top-7 right-7 absolute">
-    <svg aria-hidden="true" focusable="false" class="h-6 text-white" role="img" xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 352 512">
-      <path fill="currentColor"
-        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
-      </path>
-    </svg>
-  </div>
-  <div class="flex flex-col text-center text-white text-2xl font-bold">
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
-    <a class="py-2 menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
-    {{ end }}
+  class=" bg-blue-600 h-screen w-screen fixed z-50 py-6 bg-gradient-to-b from-green-400 to-blue-500 opacity-90 overflow-hidden hidden">
+  <div class="container mx-auto px-6 md:px-4 relative flex flex-col items-center justify-around">
+    <div id="menu-close" role="button" class="top-1 right-5 absolute hover:opacity-70 cursor:pointer text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">
+        <path fill="currentColor"
+          d="M 39.486328 6.9785156 A 1.50015 1.50015 0 0 0 38.439453 7.4394531 L 24 21.878906 L 9.5605469 7.4394531 A 1.50015 1.50015 0 0 0 8.484375 6.984375 A 1.50015 1.50015 0 0 0 7.4394531 9.5605469 L 21.878906 24 L 7.4394531 38.439453 A 1.50015 1.50015 0 1 0 9.5605469 40.560547 L 24 26.121094 L 38.439453 40.560547 A 1.50015 1.50015 0 1 0 40.560547 38.439453 L 26.121094 24 L 40.560547 9.5605469 A 1.50015 1.50015 0 0 0 39.486328 6.9785156 z">
+        </path>
+      </svg>
+    </div>
+    <div class="flex flex-col text-center text-white text-3xl font-light">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+      <a class="py-2 hover:opacity-70{{ if $currentPage.IsMenuCurrent " main" . }} font-semibold	{{ end }}"
+        href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </div>
   </div>
 </div>
