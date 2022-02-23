@@ -6,13 +6,10 @@
     "license": "MIT",
     "scripts": {
         "start": "concurrently \"npm run watch:tailwind\" \"npm run watch:hugo\"",
-        "start:example": "concurrently \"npm run watch:tailwind\" \"npm run watch:hugo-example-site\"",
-        "build": "tailwind && hugo --minify",
-        "build:example": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --source=exampleSite --themesDir ../..",
-        "tailwind": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css",
+        "build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --minify",
         "watch:tailwind": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
         "watch:hugo": "hugo server",
-        "watch:hugo-example-site": "hugo server --source=exampleSite --themesDir='../../'"
+        "example": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo server --source=exampleSite --themesDir ../.."
     },
     "dependencies": {
         "@tailwindcss/typography": "^0.5.0",
