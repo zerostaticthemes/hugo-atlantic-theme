@@ -1,3 +1,6 @@
+[build]
+  publish = "exampleSite/public"
+  
 [build.environment]
   HUGO_VERSION = "0.92.0"
   HUGO_THEME = "repo"
