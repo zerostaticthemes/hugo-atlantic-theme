@@ -2,3 +2,4 @@
   HUGO_VERSION = "0.92.0"
   HUGO_THEME = "repo"
   HUGO_BASEURL = "/"
+  NODE_VERSION = 14
