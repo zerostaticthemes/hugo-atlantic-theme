@@ -33,7 +33,12 @@ paginate = 3
     heading = "Lato"
     base = "Source Sans Pro"
     monospace = "Fira Mono"
-  
+
+  [params.seo]
+    meta_twitter_site = "@zerostaticio"
+    meta_twitter_creator = "@zerostaticio"
+    meta_og_image = "https://www.zerostatic.io/theme/jekyll-atlantic/jekyll-atlantic-screenshot.png"
+
 [build]
   writeStats = true
 
