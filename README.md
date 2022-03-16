@@ -9,6 +9,9 @@ Atlantic is a clean and modern Tailwind 3 theme for Hugo.
 
 ## Features
 
+
+- [Tailwind CSS](https://tailwindcss.com/docs) v3
+- [PostCSS](https://postcss.org/)
 - Uses PostCSS with postcss-import and postcss-nested
 - Full blog functionality
 - Beautfifuly designed responsive blog and post layouts
@@ -87,13 +90,6 @@ npm run start
 
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
-## License & Credits
-
-This theme is open source under the MIT license.
-
-Please don't create ports of this theme.
-
 ## Other Versions
 
-- [Jekyll Atlantic Theme](https://github.com/zerostaticthemes/jekyll-atlantic-theme) (official)
-- [Gatsby Atlantic Theme](https://github.com/zerostaticthemes/gatsby-atlantic-theme) (official)
+- [Jekyll Atlantic Theme](https://github.com/zerostaticthemes/jekyll-atlantic-theme) (Github)

@@ -16,8 +16,7 @@
         {
             "files": ["*.html"],
             "options": {
-                "parser": "go-template",
-                "printWidth": 320
+                "parser": "go-template"
             }
         }
     ]
