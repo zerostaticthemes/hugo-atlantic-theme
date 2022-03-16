@@ -1,7 +1,7 @@
 name = "Hugo Atlantic"
-description = "A Hugo Tailwind blog theme"
+description = "A Hugo Tailwind 3 blog theme"
 homepage = "https://hugo-atlantic.netlify.com"
-min_version = "0.74.3"
+min_version = "0.92.2"
 
 [author]
   name = "Robert Austin"

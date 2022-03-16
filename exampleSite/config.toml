@@ -11,6 +11,7 @@ paginate = 3
 
 [params]
   google_analytics_id = ""
+
   [params.homepage]
     postLimit = 6
     
@@ -37,7 +38,7 @@ paginate = 3
   [params.seo]
     meta_twitter_site = "@zerostaticio"
     meta_twitter_creator = "@zerostaticio"
-    meta_og_image = "https://www.zerostatic.io/theme/jekyll-atlantic/jekyll-atlantic-screenshot.png"
+    meta_og_image = "https://www.zerostatic.io/theme/hugo-atlantic/hugo-atlantic-screenshot.png"
 
 [build]
   writeStats = true
