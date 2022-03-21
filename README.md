@@ -3,31 +3,29 @@
 Atlantic is a clean and modern Tailwind 3 theme for Hugo.
 
 [Live Demo](https://hugo-atlantic.netlify.app/) |
-[Zerostatic Themes](https://www.zerostatic.io/) |
+[Zerostatic Themes](https://www.zerostatic.io/)
 
 ![Hugo Atlantic Theme screenshot](https://www.zerostatic.io/theme/hugo-atlantic/hugo-atlantic-screenshot.png)
 
 ## Features
 
 
-- [Tailwind CSS](https://tailwindcss.com/docs) v3
-- [PostCSS](https://postcss.org/)
-- Uses PostCSS with postcss-import and postcss-nested
-- Full blog functionality
+- [Tailwind CSS v3](https://tailwindcss.com/docs)
+- [PostCSS v8](https://postcss.org/)
+- Uses PostCSS with `postcss-import` and `postcss-nested`
+- Full Hugo blog functionality
 - Beautfifuly designed responsive blog and post layouts
 - Blog categories
-- Blog authors (multiple)
 - Blog pagination
-- Ready to deploy to Netlify
 - Responsive design
 - Responsive menu
 - 100/100 Google Lighthouse speed score ⚡
 - 100/100 Google Lighthouse seo score 🏆
 - 94/100 Google Lighthouse accessibility score (but this is just because of the green text color contrast)
-- Page size is 10KB without images, can you believe it?? 🔥
+- Page size is 8.7kB without images. You could load this site on a 56k modem in 1.5 seconds.
 - Robust example content included
 - Royalty free illustrations included
-- Netlify & Github Pages ready
+- Netlify ready - `netlify.toml` included
 
 ## Installation
 
