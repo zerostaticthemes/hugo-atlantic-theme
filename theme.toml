@@ -1,7 +1,14 @@
 name = "Hugo Atlantic"
+license = "MIT"
+licenselink = "https://github.com/zerostaticthemes/hugo-atlantic-theme/blob/main/LICENSE"
 description = "A Hugo Tailwind 3 blog theme"
+
 homepage = "https://hugo-atlantic.netlify.com"
+demosite = "https://hugo-atlantic.netlify.app/"
 min_version = "0.92.2"
+
+tags = ["blog", "tailwind", "minimal", "zerostatic"]
+features = ["blog"]
 
 [author]
   name = "Robert Austin"
