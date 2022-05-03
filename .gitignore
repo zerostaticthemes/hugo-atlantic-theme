@@ -4,3 +4,4 @@ node_modules
 public
 resources
 exampleSite/assets/css/dist
+exampleSite/package-lock.json
