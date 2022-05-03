@@ -11,7 +11,7 @@
     {{ partial "head/google-fonts.html" . }}
     {{ partial "head/meta.html" . }}
 
-    {{ $styles := resources.Get "/css/style.css" | postCSS }}
+    {{ $styles := resources.Get "/css/dist/style.css" | postCSS }}
     {{ if .Site.IsServer }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
     {{ else }}

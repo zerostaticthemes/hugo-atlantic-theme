@@ -6,8 +6,8 @@
     "license": "MIT",
     "scripts": {
         "start": "concurrently \"npm run watch:tailwind\" \"npm run watch:hugo\"",
-        "build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --minify",
-        "watch:tailwind": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css --watch",
+        "build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/dist/style.css && hugo --minify",
+        "watch:tailwind": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/dist/style.css --watch ",
         "watch:hugo": "hugo server",
         "example": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo server --source=exampleSite --themesDir ../..",
         "example-build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --source=exampleSite --themesDir ../.."
