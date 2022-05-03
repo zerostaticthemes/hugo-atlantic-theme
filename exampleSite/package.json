@@ -9,17 +9,13 @@
         "build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/dist/style.css && hugo --minify",
         "watch:tailwind": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/dist/style.css --watch ",
         "watch:hugo": "hugo server",
-        "example": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo server --source=exampleSite --themesDir ../..",
-        "example-build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/style.css && hugo --source=exampleSite --themesDir ../.."
+        "example": "concurrently \"npm run example:tailwind\" \"npm run example:hugo\"",
+        "example:tailwind": "tailwindcss -c tailwind.config.example.js -i ./assets/css/tailwind.css -o ./assets/css/dist/style.css --watch",
+        "example:hugo": "hugo server --themesDir ../.."
     },
     "dependencies": {
         "@tailwindcss/typography": "^0.5.0",
-        "autoprefixer": "^10.4.2",
         "concurrently": "^7.0.0",
-        "postcss": "^8.4.5",
-        "postcss-cli": "^9.1.0",
-        "postcss-import": "^14.0.2",
-        "postcss-nested": "^5.0.6",
         "prettier": "^2.5.1",
         "prettier-plugin-go-template": "0.0.11",
         "tailwindcss": "^3.0.15"

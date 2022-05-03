@@ -3,4 +3,4 @@ node_modules
 .idea
 public
 resources
-assets/css/dist/
+exampleSite/assets/css/dist
